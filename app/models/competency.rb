@@ -1,4 +1,4 @@
 class Competency < ApplicationRecord
-  has_many :skill
+  has_many :skills
   belongs_to :category
 end
