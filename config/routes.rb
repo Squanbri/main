@@ -3,10 +3,5 @@ Rails.application.routes.draw do
   root 'category#categories'
 
   get 'competencys' => 'category#competencys'
-
-  resources :category do
-    resources :competencies do
-      resources :skills
-    end
-  end
+  get 'skills' => 'category#skills'
 end

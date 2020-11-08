@@ -9,12 +9,8 @@ class CategoryController < ApplicationController
     render json: @competencys, status: :ok
   end
 
-  # def skills
-  #   @skills = Skill.all
-  #   render json: @skill, status: :ok
-  # end
-
-  def show
-    @category = Category.find(params[:id])
+  def skills
+    @skills = Skill.all
+    render json: @skills, status: :ok
   end
 end
