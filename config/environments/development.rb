@@ -1,6 +1,19 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.default_url_options = { host: 'host.lazur.media', port: 3000 }
+  # #product-rails@yandex.ru qwerty123qwerty
+  # config.action_mailer.smtp_settings = {
+  #     :address              => "smtp.yandex.ru", # ENTER SETTINGS FOR YOUR MAIL ACCOUNT
+  #     :port                 => 465,
+  #     :user_name            => "product-rails@yandex.ru",
+  #     :password             => "qwerty123qwerty",
+  #     :domain               => 'yandex.ru',
+  #     :authentication       => 'plain',
+  #     :tls                  => true
+  # }
+
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
