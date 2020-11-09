@@ -4,5 +4,5 @@ Rails.application.routes.draw do
 
   get 'competencys' => 'category#competencys'
   get 'skills' => 'category#skills'
-  post '/send', to: 'send#create'
+  post '/forms', to: 'forms#create'
 end

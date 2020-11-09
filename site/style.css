@@ -108,6 +108,7 @@ border-radius:10px;
 overflow-y: hidden;
 border-right: rgba(117, 95, 226, 1) solid 3px;
 height: 24.4em;
+font-weight: 600;
 }
 
 .er{
@@ -115,6 +116,7 @@ height: 24.4em;
 overflow-y: scroll;
 overflow-x: hidden;
 border-right: rgba(117, 95, 226, 1) solid 3px;
+font-weight: 600;
 }
 
 /* Resize / 10px 10px suggested  */
