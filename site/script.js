@@ -16,10 +16,38 @@ axios.get('http://localhost:3000/skills').then( response => { c = response.data;
 var a, b, c;
 var competency = 1;
 var selectSkills = [];
+const feedbackMessage = document.getElementById("feedbackMessage")
 
 function Send(){
-  console.log("ok");
-  axios.post('http://localhost:3000/send', { selectSkills }).then(response => console.log(response.data)).catch(error => console.log(error));
+  const fio = document.getElementsByName("Fio")[0].value
+  const phone = document.getElementsByName("Tel")[0].value
+  const company = document.getElementsByName("Comp")[0].value
+  const comment = document.getElementsByName("Comm")[0].value
+
+  let selSkills = "";
+  for(let i = 0; i < selectSkills.length; i++){
+    selSkills += selectSkills[i] + "; ";
+  }
+
+  const params = {
+    form: {
+      fio: fio,
+      phone: phone,
+      company: company,
+      comment: comment,
+      skills: selSkills
+    }
+  }
+  console.log(
+    params
+  )
+  axios.post('http://localhost:3000/forms', params)
+    .then(response => {
+      feedbackMessage.innerHTML = "Success"
+    })
+    .catch(error => {
+      feedbackMessage.innerHTML = "Fail";
+    });
 }
 
 //  Категории //
@@ -41,10 +69,17 @@ document.getElementById('categories').onclick = function(event){
         document.getElementById('competencies').innerHTML += '<li class="list-group-item active"' + "id=" + b[i].id + '>' + b[i].title + '</li>';
 
         document.getElementById('skills').innerHTML = "";
+        let select = false;
         for(let j = 0; j < c.length; j++)
-          if(c[j].competency_id == b[i].id)
-            document.getElementById('skills').innerHTML += '<li class="list-group-item"' + "id=" + c[j].id + '>' + c[j].title + '</li>';
-
+          if(c[j].competency_id == b[i].id){
+            for(let k = 0; k < selectSkills.length; k++){
+              if(selectSkills[k] == c[j].title) {select = true; break;}
+              else select = false;
+            }
+            if(select)document.getElementById('skills').innerHTML += '<li class="list-group-item active d-flex justify-content-between align-items-center"' + "id=" + c[j].id + '>' + c[j].title + '<span class="badge badge-success badge-pill">&nu;</span>' + '</li>';
+            else document.getElementById('skills').innerHTML += '<li class="list-group-item"' + "id=" + c[j].id + '>' + c[j].title + '</li>';
+            // document.getElementById('skills').innerHTML += '<li class="list-group-item"' + "id=" + c[j].id + '>' + c[j].title + '</li>';
+          }
         k++;
       }
 }
