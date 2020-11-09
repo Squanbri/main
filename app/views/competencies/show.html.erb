@@ -1,0 +1,10 @@
+<%= @competency.title %>
+
+<%= form_for([@competency, @competency.skills.build]) do |f|%>
+  <%= f.text_field(:title) %>
+  <%= f.submit("Сохранить") %>
+<% end %>
+
+<% @competency.skills.each do |c| %>
+  <%= c.title %>
+<% end %>
