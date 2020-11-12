@@ -1,0 +1,13 @@
+<div class="container text-center border">
+  <div class="text-left mt-3">
+    <%= link_to 'Назад', category_index_path, class: 'btn btn-primary' %>
+  </div>
+  <h1><%= @category.title %></h1>
+  <% @competencys.each do |competency| %>
+    <%= link_to category_competency_skills_path(competency, @category) do %>
+      <% if competency.category_id == @category.id %>
+        <li class="list-group-item"> <%= competency.title %> </li>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

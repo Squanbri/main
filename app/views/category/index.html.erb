@@ -1,0 +1,8 @@
+<h1 class="text-center"> Все категории </h1>
+<div class="container">
+  <% @categories.each do |category| %>
+    <%= link_to category_competencies_path(category) do %>
+      <li class="list-group-item"> <%= category.title %> </li>
+    <% end %>
+  <% end %>
+</div>

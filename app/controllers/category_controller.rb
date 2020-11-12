@@ -13,4 +13,8 @@ class CategoryController < ApplicationController
     @skills = Skill.all
     render json: @skills, status: :ok
   end
+
+  def index
+    @categories = Category.all
+  end
 end
