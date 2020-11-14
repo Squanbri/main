@@ -6,7 +6,8 @@ class FormsController < ApplicationController
 
     if @form.save
       render json: @form, status: :created
-      FormMailer.form_send(@form).deliver
+      #FormMailer.form_send(@form).deliver
+      FeedbackMailer.with(form: @form).feedback_email.deliver_now
     else
       render json: "Some error", status: :bad_request
     end

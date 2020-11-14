@@ -1,5 +1,17 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { host: 'https://boiling-cliffs-12715.herokuapp.com/' }
+  #product-rails@yandex.ru qwerty123qwerty
+  config.action_mailer.smtp_settings = {
+      :address              => "smtp.yandex.ru", # ENTER SETTINGS FOR YOUR MAIL ACCOUNT
+      :port                 => 465,
+      :user_name            => "product-rails@yandex.ru",
+      :password             => "qwerty123qwerty",
+      :domain               => 'yandex.ru',
+      :authentication       => 'plain',
+      :tls                  => true
+  }
 
   # Code is not reloaded between requests.
   config.cache_classes = true

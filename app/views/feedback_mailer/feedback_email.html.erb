@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+<p>Новая заявка</p>
+<hr>
+<p>ФИО: <%= @form.fio %></p>
+<p>ТЕЛЕФОН: <%= @form.phone %></p>
+<p>КОМПАНИЯ: <%= @form.company %></p>
+<p>СКИЛЫ: <%= @form.skills %></p>
+<p>
+  Сообщение:<br>
+  ----------
+</p>
+<%- if @form.comment.empty? %>
+  <p>Дополнительной информации нет</p>
+<%- else %>
+  <p><%= @form.comment %></p>
+<%- end %>
+</body>
+</html>

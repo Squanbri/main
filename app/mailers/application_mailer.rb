@@ -1,4 +1,5 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'from@example.com'
+  default from: 'rails-product@mail.ru'
+  #default from: 'product-rails@yandex.ru'
   layout 'mailer'
 end

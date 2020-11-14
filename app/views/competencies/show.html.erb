@@ -1,10 +1,9 @@
-<%= @competency.title %>
-
-<%= form_for([@competency, @competency.skills.build]) do |f|%>
-  <%= f.text_field(:title) %>
-  <%= f.submit("Сохранить") %>
-<% end %>
-
-<% @competency.skills.each do |c| %>
-  <%= c.title %>
-<% end %>
+<%= link_to 'Назад', category_index_path, class: 'btn btn-primary' %>
+<h1 class="text-center"> <%= @category.title %> </h1>
+<div class="container">
+  <% @competencies.each do |competency| %>
+    <%= link_to category_competency_skill_path(competency.category, competency) do %>
+      <li class="list-group-item"> <%= competency.title %> </li>
+    <% end %>
+  <% end %>
+</div>
