@@ -2,7 +2,7 @@ axios.get('http://localhost:3000/').then( response => {  a = response.data;
   document.getElementById('categories').innerHTML += '<li class="list-group-item active"' + "id=" + a[0].id + '>' + a[0].title + '</li>';
   for(let i = 1; i < a.length; i++) document.getElementById('categories').innerHTML += '<li class="list-group-item"' + "id=" + a[i].id + '>' + a[i].title + '</li>';
 })
-axios.get('http://localhost:3000/competencys').then( response => { b = response.data;
+axios.get('http://localhost:3000/competencies').then( response => { b = response.data;
   document.getElementById('competencies').innerHTML += '<li class="list-group-item active"' + "id=" + b[0].id + '>' + b[0].title + '</li>';
   for (let i = 1; i < b.length; i++)
     if(b[i].category_id == 1) document.getElementById('competencies').innerHTML += '<li class="list-group-item"' + "id=" + b[i].id + '>' + b[i].title + '</li>';
