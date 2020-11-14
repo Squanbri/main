@@ -1,4 +1,4 @@
 class Competency < ApplicationRecord
-  has_many :skills # competenciya soderjit v sebe ssilku na skilli
+  has_many :skills, dependent: :delete_all
   belongs_to :category
 end

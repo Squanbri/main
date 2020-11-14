@@ -2,10 +2,10 @@
 <h1 class="text-center"> <%= @competency.title %> </h1>
 <div class="container">
   <% @skills.each do |skill| %>
-    <div class="row">
+    <div class="row mb-1">
       <li class="list-group-item w-75"> <%= skill.title %> </li>
-      <%= link_to "Удалить", category_competency_skill_path(@category, @competency, skill), class: 'btn btn-danger', method: :delete, data: { confirm: "you are sure?" } %>
       <%= link_to "Изменить", edit_category_competency_skill_path(@category, @competency, skill), class: 'btn btn-warning'%>
+      <%= link_to "Удалить", category_competency_skill_path(@category, @competency, skill), class: 'btn btn-danger', method: :delete, data: { confirm: "you are sure?" } %>
     </div>
   <% end %>
 

@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  root 'category#categories'
+  root 'categories#categories'
 
-  get 'skills'      => 'category#skills'
-  get 'competencys' => 'category#competencys'
+  get 'skills'       => 'categories#skills'
+  get 'competencies' => 'categories#competencies'
   post '/forms', to: 'forms#create'
 
-  resources :category do
+  resources :categories do
     resources :competencies do
       resources :skills
     end

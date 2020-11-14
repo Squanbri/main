@@ -1,3 +1,3 @@
 class Category < ApplicationRecord
-  has_many :competencies
+  has_many :competencies, dependent: :destroy
 end
