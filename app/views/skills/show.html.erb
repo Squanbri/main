@@ -1,4 +1,4 @@
-<%= link_to 'Назад', category_competency_path(@category, @category.competencies), class: 'btn btn-primary' %>
+<%= link_to 'Назад', category_path(@category), class: 'btn btn-primary' %>
 <h1 class="text-center"> <%= @competency.title %> </h1>
 <div class="container">
   <% @skills.each do |skill| %>

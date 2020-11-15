@@ -1,5 +1,5 @@
 class SkillsController < ApplicationController
-  before_action :set_skill, only: %i[show create]
+  before_action :set_competency, only: %i[show create]
 
   def show
     @category = @competency.category

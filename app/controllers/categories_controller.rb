@@ -1,9 +1,13 @@
 class CategoriesController < ApplicationController
-  before_action :set_category, only: %i[edit update destroy]
+  before_action :set_category, only: %i[show edit update destroy]
 
   def index
     @categories = Category.all
     @category = Category.new
+  end
+
+  def show
+    @competency = Competency.new
   end
 
   def create
@@ -45,9 +49,5 @@ class CategoriesController < ApplicationController
 
   def set_category
     @category = Category.find(params[:id])
-  end
-
-  def redirect_to_categories
-    redirect_to categories_path
   end
 end
